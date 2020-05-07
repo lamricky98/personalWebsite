@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% set active_page = "profile" %}
+
+{% block title %}{{ super() }} – Profile{% endblock %}
+
+{% block content %}
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="profile">
+        <div class="w-100">
+            <img class="img-fluid img-profile rounded float-left" src="{{ profilePic }}" alt="Default Cat Picture" style="margin-right: 25px;" width="150px" height="150px">
+            <h2 class="mb-2">Welcome, {{  current_user.username }}!</h2>
+            <h4 class="mb-1">Join date: {{ current_user.join_date.strftime('%Y-%m-%d at %H:%M:%S') }}</h4>
+             <div class="resume-section">
+                <a href="/update" class="btn btn-light">Click here to update your information</a>
+             </div>
+            </div>
+
+    </section>
+
+
+{% endblock %}
+

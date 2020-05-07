@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% set active_page = "biography" %}
+
+{% block title %}{{ super() }} – Biography{% endblock %}
+
+{% block content %}
+
+   <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="biography">
+        <div class="w-100">
+            <h2 class="mb-5">Biography</h2>
+
+            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="resume-content">
+                    <h3 class="mb-0">When I was a kid</h3>
+                    <div class="subheading mb-3">From birth to my teens</div>
+                    <p>Born with a weak immune system, I'd get sick from ever so slightly being exposed to the outside world. Little
+                    me was kept inside the house where I'd learn to enjoy indoor activities. This was my life all the way up until
+                    my teens. There really isn't much to say.</p>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="resume-content">
+                    <h3 class="mb-0">Middle and High School Years</h3>
+                    <div class="subheading mb-3">Until I graduated school basically</div>
+                    <p>At this point in life most of my health problems had dissipated. I became a regular boy having a regular
+                    life, though still sticking to my comfort zone of the sedentary house holed mister mans. However, I'd get involved
+                    in big national academic competitions every year called the "Olympiads". I brought back a medal every time I was allowed
+                    to participate in them. I also developed interest in software and technology after growing up my entire life handling them.</p>
+                </div>
+            </div>
+
+            <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="resume-content">
+                    <h3 class="mb-0">University Life</h3>
+                    <div class="subheading mb-3">A fresh start</div>
+                    <p>Right after graduating from high school, I left my home country to pursue a higher education in Canada. Moving out to a place I
+                    have never once visited and had no acquaintances with was a huge change of scenery. The culture and the geography and just having to live
+                    by my own efforts; it's as if I started life anew. But despite all that, I have been enjoying myself every day. There's always new challenges
+                    to take on and overcome.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+{% endblock %}

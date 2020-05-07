@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% set active_page = "edit" %}
+
+{% block title %}{{ super() }} – Edit Page{% endblock %}
+
+{% block content %}
+
+
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="login">
+        <div class="w-100">
+
+<form action="{{ url_for('editPage',page_id = page.id)}}" method="post">
+    <div class="form-group">
+        <label for="name">Title:</label>
+        <input type="text" class="form-control" name="name" value="{{page.title }}">
+        <button type="submit"> SAVE</button>
+        <a href='{{url_for('restful')}}'>
+            <button>Cancel</button>
+        </a>
+    </div>
+</form>
+        </div>
+    </section>
+
+{% endblock %}
