@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% set active_page = "restful" %}
+
+{% block title %}{{ super() }} – RESTful API{% endblock %}
+
+{% block content %}
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="home">
+        <div class="w-100">
+            <h1 class="mb-5">Restful API</h1>
+            <p class="mb-0">The following data can be accessed through my RESTful API.</p>
+                    <p class="mb-0">You may visit the following URL to GET or POST to the database: <a href="/pagesApi">/pagesApi/</a></p>
+                    <p class="mb-0">You may also GET, PUT, or DELETE a single entry by specifying the ID: /pagesApi/idGoesHere</p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Page Title</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for page in pages %}
+                        <tr>
+                            <th scope="row">
+                                {{ page.id }}
+                            </th>
+                            <td>
+                                {{ page.title }}
+                            </td>
+                            <td>
+                                <a href="{{ url_for('editPage', page_id = page.id ) }}">
+                                    Edit Title
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('deletePage', page_id = page.id ) }}" style="margin-left: 10px;">
+                                    Delete Entry
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="/pages/new">Click here to add a new page</a></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
+                 data-layout="button" data-size="small"><a target="_blank"
+                                                           href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                                                           class="fb-xfbml-parse-ignore">Share</a>
+            </div>
+        </div>
+
+    </section>
+
+
+{% endblock %}
